@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FXTouch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <style>
+        .touch {
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-text-size-adjust: none;
+            -webkit-touch-callout: none;
+        }
+
+        #element1 {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            height:120px;
+            width:120px;
+            text-align:center;
+            line-height: 120px;
+            color: white;
+            background-color: blue;
+        }
+
+    </style>
+    <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+    <script src="FXTouch.js"></script>
+    <script>
+        window.onload = function() {
+
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, true);
+
+            var element1 = new FXTouch($('#element1')[0]).init();
+        };
+    </script>
+</head>
+<body>
+<div class="touch" id="element1"></div>
+</body>
+</html>
